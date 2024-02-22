@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.header-itens {
+    background: #9ca0e3;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 40px;
+}
+
+.header-ul {
+    display: inline-flex;
+    list-style: none;
+    align-items: center;
+}
+
+.header-ul li {
+    margin-right: 40px;
+    font-size: 15pt;
+}
+
+.container-abt {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-merchan {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.container-merchan h1 {
+    font-size: 60pt;
+    white-space: pre-line;
+}
+
+.container-merchan img {
+    width: 400px;
+    height: 400px;
+}
+
+.paper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.paper h2, li{
+    margin-top: 20px;
+}
+
+.paper h2{
+    font-size: 50pt;
+}
+
+.paper li{
+    font-size: 30pt;
+}
+
+.website {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.website h2, li{
+    margin-top: 20px;
+}
+
+.website h2{
+    font-size: 50pt;
+}
+
+.website li{
+    font-size: 30pt;
+}
+
+.container-pw {
+    background: #9ca0e3;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-text-comparison{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.container-form {
+    display: flex;
+    width: 50%;
+    height: 300px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container-atv {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+#hr-style {
+    color: black;
+    text-decoration: none;
+    width: 2px;
+    background: black;
+}
+
+.purchased {
+    background: green;
+    color: white;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadTask()" >
+
+  <header>
+    <nav class="header-itens">
+      <ul class="header-ul">
+        <li><a href="#">produce</a></li>
+        <li><a href="#">login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <section class="container-abt">
+
+      <div class="container-merchan">
+        <h1>The best website
+          to organize your activities
+          is here</h1>
+        <img src="./img/calendar.png" alt="imagem de frutas">
+      </div>
+
+    </section>
+    <section class="container-pw">
+      <div class="container-text-comparison">
+        <div class="paper">
+          <h2>Use a paper:</h2>
+          <ul>
+            <li>Rips</li>
+            <li>Wet</li>
+          </ul>
+        </div>
+        <hr id="hr-style">
+        <div class="website">
+          <h2>Use our website</h2>
+          <ul>
+            <li>Modern</li>
+            <li>Easy to use</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="container">
+      <div class="container-form">
+        <h1>TEST</h1>
+        <input type="text" id="task" placeholder="Add ingredient">
+        <input type="date" id="date-task">
+        <button onclick="add()">Add now</button>
+      </div>
+      <div class="container-atv">
+        <ul id="list-task"></ul>
+      </div>
+    </div>
+
+    <script src="list.js"></script>
+
+  </main>
+  <footer></footer>
+
+</body>
+
+</html>
