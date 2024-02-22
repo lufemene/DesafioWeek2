@@ -4,11 +4,11 @@ function add() {
     const task = taskInput.value.trim();
     const date = dateInput.value;
 
-    if (task != '' || date != '') {
+    if (task != '' && date != '') {
         let list = document.getElementById("list-task")
         var li = document.createElement('li')
         li.innerHTML = `<span>${task}</span> <span>${date}</span>
-    <button onclick="bought(this)">purchased</button>
+    <button onclick="bought(this)">done</button>
     <button onclick="remove(this)">remove</button>`
 
         saveTask(task, date)
@@ -31,9 +31,7 @@ function remove(index) {
     let activities = JSON.parse(localStorage.getItem('activities')) || []
     activities = activities.filter((_, idx) => idx !== index);
     localStorage.setItem('activities', JSON.stringify(activities));
-
     loadTask();
-
 }
 
 function saveTask(task, date) {
@@ -50,7 +48,7 @@ function loadTask() {
     activities.forEach(function (MyTask, index) {
         let li = document.createElement('li')
         li.innerHTML = `<span>${MyTask.task}</span> <span>${MyTask.date}</span>
-        <button onclick="bought(this)">purchased</button>
+        <button onclick="bought(this)">done</button>
         <button onclick="remove(${index})">remove</button>`
 
         list.appendChild(li)

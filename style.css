@@ -7,7 +7,10 @@ a {
     color: black;
 }
 
-
+header {
+    position: absolute;
+    width: 100%;
+}
 
 .header-itens {
     background: #9ca0e3;
@@ -30,7 +33,7 @@ a {
 
 .container-abt {
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: flex;
     justify-content: center;
 }
@@ -59,15 +62,16 @@ a {
     justify-content: center;
 }
 
-.paper h2, li{
-    margin-top: 20px;
+.paper h2,
+.paper li {
+    padding: 20px;
 }
 
-.paper h2{
-    font-size: 50pt;
+.paper h2 {
+    font-size: 40pt;
 }
 
-.paper li{
+.paper li {
     font-size: 30pt;
 }
 
@@ -78,15 +82,16 @@ a {
     justify-content: center;
 }
 
-.website h2, li{
-    margin-top: 20px;
+.website h2,
+.website li {
+    padding: 20px;
 }
 
-.website h2{
-    font-size: 50pt;
+.website h2 {
+    font-size: 40pt;
 }
 
-.website li{
+.website li {
     font-size: 30pt;
 }
 
@@ -98,32 +103,76 @@ a {
     justify-content: center;
 }
 
-.container-text-comparison{
+.container-text-comparison {
     display: flex;
     width: 80%;
     justify-content: space-around;
 }
 
+.container-for-help {
+    background: rgb(0, 0, 0);
+    color: white;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 .container {
     width: 100%;
+    height: 600px;
     display: flex;
 }
 
 .container-form {
     display: flex;
     width: 50%;
-    height: 300px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
+.container-form input {
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.container-form button {
+    background: rgb(72, 196, 82);
+    color: white;
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+}
+
+.container-form h2{
+    padding: 10px;
+}
+
+.container-form input,
+.container-form button {
+    margin-top: 20px;
+}
 
 .container-atv {
     display: flex;
     width: 50%;
-    justify-content: center;
-    align-items: center;
+    background: #898a94;
+}
+
+.container-atv li {
+    margin-top: 20px;
+    font-size: 15pt;
+}
+
+.container-atv button {
+    display: flex;
+    width: 100px;
 }
 
 #hr-style {
