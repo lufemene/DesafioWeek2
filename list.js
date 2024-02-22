@@ -27,11 +27,13 @@ function bought(button) {
     button.parentNode.querySelector('button').classList.toggle('purchased');
 }
 
-function remove(button) {
-    button.parentNode.remove();
-    console.log(button)
-    loadTask()
-    
+function remove(index) {
+    let activities = JSON.parse(localStorage.getItem('activities')) || []
+    activities = activities.filter((_, idx) => idx !== index);
+    localStorage.setItem('activities', JSON.stringify(activities));
+
+    loadTask();
+
 }
 
 function saveTask(task, date) {
@@ -45,15 +47,14 @@ function loadTask() {
     const list = document.getElementById('list-task')
     list.innerHTML = ''
 
-    activities.forEach(function (MyTask) {
+    activities.forEach(function (MyTask, index) {
         let li = document.createElement('li')
         li.innerHTML = `<span>${MyTask.task}</span> <span>${MyTask.date}</span>
         <button onclick="bought(this)">purchased</button>
-        <button onclick="remove(this)">remove</button>`
+        <button onclick="remove(${index})">remove</button>`
 
         list.appendChild(li)
     });
 }
-
 
 
