@@ -132,7 +132,6 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
 }
 
 .container-form input {
@@ -162,17 +161,34 @@ header {
 .container-atv {
     display: flex;
     width: 50%;
-    background: #898a94;
+    flex-direction: column;
+    background: #a3a4b1;
+    overflow-y: scroll;
 }
 
 .container-atv li {
+    display: flex;
+    padding: 10PX;
     margin-top: 20px;
     font-size: 15pt;
 }
 
+.container-atv ul{
+    margin: 0;
+    padding: 0 ;
+}
+
 .container-atv button {
-    display: flex;
     width: 100px;
+    height: 50px;
+    margin-left: 50px;
+    justify-content: center;
+    display: flex;
+}
+
+.container-atv li, .container-atv  button{
+    display: flex;
+    align-items: center;
 }
 
 #hr-style {
@@ -185,4 +201,8 @@ header {
 .purchased {
     background: green;
     color: white;
+}
+
+@media screen {
+    
 }
