@@ -24,6 +24,10 @@ function add() {
 }
 
 function bought(button) {
+    let index = Array.from(button.parentNode.parentNode.children).indexOf(button.parentNode)
+    let activities = JSON.parse(localStorage.getItem('activities')) || []
+    activities[index].completed = !activities[index].completed; 
+    localStorage.setItem('activities', JSON.stringify(activities));
     button.parentNode.querySelector('button').classList.toggle('purchased');
 }
 
@@ -32,12 +36,11 @@ function remove(index) {
     activities.splice(index, 1)
     localStorage.setItem('activities', JSON.stringify(activities));
     loadTask();
-
 }
 
 function saveTask(task, date) {
     let activities = JSON.parse(localStorage.getItem('activities')) || [];
-    activities.push({ task: task, date: date, visible: true });
+    activities.push({ task: task, date: date, completed: false });
     localStorage.setItem('activities', JSON.stringify(activities));
 }
 
@@ -50,7 +53,7 @@ function loadTask() {
         let li = document.createElement('li')
         li.innerHTML = `
         <span> <b>Task:</b> ${MyTask.task} <br> <br> <b>Date:</b> ${MyTask.date} </span>
-        <button onclick="bought(this)">done</button>
+        <button onclick="bought(this)" ${MyTask.completed ? 'class="purchased"' : ''} >done</button>
         <button onclick="remove(${index})">remove</button>
         `
 
