@@ -12,8 +12,7 @@ function add() {
 
     if (valid) {
         alert('this task already exists for this date.')
-    }
-     else if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
+    } else if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
         let list = document.getElementById("list-task")
         var li = document.createElement('li')
 
@@ -35,6 +34,8 @@ function add() {
 
         taskInput.value = '';
         dateInput.value = '';
+
+        selectOptions()
 
     } else {
         alert("enter something")
@@ -71,7 +72,6 @@ function show() {
 
     selectedTask.forEach(function (MyTask, index) {
         let li = document.createElement('li')
-
         li.innerHTML = `
         <span> <b>Task:</b> ${MyTask.task} <br> <br> <b>Date:</b> ${MyTask.date} </span>
         <button onclick="bought(this)" ${MyTask.completed ? 'class="purchased"' : ''} >done</button>
@@ -82,7 +82,7 @@ function show() {
 }
 
 function selectOptions() {
-    let activities = JSON.parse(localStorage.getItem('activities')) || []
+    let activities = JSON.parse(localStorage.getItem('activities')) || [];
     let dateSet = new Set();
     activities.forEach(task => dateSet.add(task.date))
 
@@ -105,6 +105,7 @@ function loadTask() {
     let activities = JSON.parse(localStorage.getItem('activities')) || [];
     const list = document.getElementById('list-task')
     list.innerHTML = ''
+
 
     activities.forEach(function (MyTask, index) {
         let li = document.createElement('li')
