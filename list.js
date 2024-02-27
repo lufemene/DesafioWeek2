@@ -6,19 +6,26 @@ function add() {
     const date = `${day}/${month}/${year}`;
     const today = new Date().setHours(0, 0, 0, 0);
 
-    if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
+
+    let activities = JSON.parse(localStorage.getItem('activities')) || []
+    const valid = activities.find(item => item.task === task && item.date === date)
+
+    if (valid) {
+        alert('this task already exists for this date.')
+    } else if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
         let list = document.getElementById("list-task")
         var li = document.createElement('li')
-  
+
         let ListOptions = document.getElementById("list-options")
         var option = document.createElement('option')
 
         option.innerHTML = `${date}`
         ListOptions.appendChild(option)
 
-        // li.innerHTML = `<span> <b>Task:</b> ${task} <br> <br> <b>Date:</b> ${date} </span>
-        // <button onclick="bought(this)">done</button>
-        // <button onclick="remove(this)">remove</button>`
+        li.innerHTML = `
+        <span> <b>Task:</b> ${task} <br> <br> <b>Date:</b> ${date} </span>
+        <button onclick="bought(this)">done</button>
+        <button onclick="remove(this)">remove</button>`
 
 
         saveTask(task, date)
@@ -63,7 +70,8 @@ function show() {
 
     selectedTask.forEach(function (MyTask, index) {
         let li = document.createElement('li')
-        li.innerHTML =`
+
+        li.innerHTML = `
         <span> <b>Task:</b> ${MyTask.task} <br> <br> <b>Date:</b> ${MyTask.date} </span>
         <button onclick="bought(this)" ${MyTask.completed ? 'class="purchased"' : ''} >done</button>
         <button onclick="remove(${index})">remove</button>`
@@ -108,5 +116,7 @@ function loadTask() {
         list.appendChild(li)
     });
 }
+
+loadTask()
 
 

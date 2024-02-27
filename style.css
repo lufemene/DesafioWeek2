@@ -169,6 +169,10 @@ header {
     margin-top: 20px;
 }
 
+.container-atv{
+  display: none;
+}
+
 .container-atv {
     display: flex;
     width: 50%;

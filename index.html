@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Crimson Text' rel='stylesheet'>
 </head>
 
-<body onload="loadTask()" onload="selectOptions()" >
+<body>
 
   <header>
     <nav class="header-itens">
@@ -74,9 +74,10 @@
       </div>
       <hr id="hr-style">
       <div class="container-atv">
-        <select id="list-options">
+        <select id="list-options" class="list-options">
           <input type="submit" onclick="show()">
         </select>
+        <h2 id="select-h2" >Latest added tasks:</h2>
         <ul id="list-task"></ul>
       </div>
     </div>
