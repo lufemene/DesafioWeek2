@@ -64,7 +64,7 @@ function show() {
     selectedTask.forEach(function (MyTask, index) {
         let li = document.createElement('li')
         li.innerHTML =`
-        span> <b>Task:</b> ${MyTask.task} <br> <br> <b>Date:</b> ${MyTask.date} </span>
+        <span> <b>Task:</b> ${MyTask.task} <br> <br> <b>Date:</b> ${MyTask.date} </span>
         <button onclick="bought(this)" ${MyTask.completed ? 'class="purchased"' : ''} >done</button>
         <button onclick="remove(${index})">remove</button>`
 
@@ -73,22 +73,24 @@ function show() {
 }
 
 function selectOptions() {
-     let activities = JSON.parse(localStorage,getItem('activities')) || []
-     let dateSet = new Set();
-     activities.forEach(task => dateSet.add(task.date))
+    let activities = JSON.parse(localStorage.getItem('activities')) || []
+    let dateSet = new Set();
+    activities.forEach(task => dateSet.add(task.date))
 
-     const ListOptions = document.getElementById('list-option')
-     ListOptions.innerHTML = ""
+    const listOptions = document.getElementById('list-options')
+    listOptions.innerHTML = '';
 
-     datesArray.forEach(date => {
+    let dateArray = Array.from(dateSet).sort();
+
+    dateArray.forEach(date => {
         let option = document.createElement('option');
         option.value = date;
         option.textContent = date;
         listOptions.appendChild(option);
-})
+    });
 }
 
-
+selectOptions()
 
 function loadTask() {
     let activities = JSON.parse(localStorage.getItem('activities')) || [];
