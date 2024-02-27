@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Crimson Text' rel='stylesheet'>
 </head>
 
-<body onload="loadTask()">
+<body onload="loadTask()" onload="selectOptions()" >
 
   <header>
     <nav class="header-itens">
@@ -74,6 +74,9 @@
       </div>
       <hr id="hr-style">
       <div class="container-atv">
+        <select id="list-options">
+          <input type="submit" onclick="show()">
+        </select>
         <ul id="list-task"></ul>
       </div>
     </div>
@@ -82,10 +85,10 @@
 
   </main>
   <footer class="container-footer" id="footer">
-      <small class="footer-cp">
-        By SrPublic |
-        Copyright ©2024 All rights reserved
-      </small>
+    <small class="footer-cp">
+      By SrPublic |
+      Copyright ©2024 All rights reserved
+    </small>
     </address>
   </footer>
 
