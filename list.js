@@ -36,7 +36,6 @@ function add() {
         dateInput.value = '';
 
         selectOptions()
-
     } else {
         alert("enter something")
     }
