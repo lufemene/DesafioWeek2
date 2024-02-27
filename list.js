@@ -12,7 +12,8 @@ function add() {
 
     if (valid) {
         alert('this task already exists for this date.')
-    } else if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
+    }
+     else if (task != '' && date != '' && new Date(year, month - 1, day) >= today) {
         let list = document.getElementById("list-task")
         var li = document.createElement('li')
 
